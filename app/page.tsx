@@ -14,7 +14,7 @@ import { Input } from "@/components/ui/input";
 export default function Home() {
   const [introVisible, setIntroVisible] = useState<boolean>(true);
   useEffect(() => {
-    const timer = setTimeout(() => setIntroVisible(false), 2000);
+    const timer = setTimeout(() => setIntroVisible(false), 1000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -22,9 +22,46 @@ export default function Home() {
     <div className="relative min-h-screen bg-white text-gray-800">
       <Analytics />
       {introVisible && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-white">
-          {/* Intro animation... */}
-        </div>
+       <div className="fixed inset-0 z-50 flex items-center justify-center bg-white text-[#4C2B21]">
+       {/* Crazy Loader Animation */}
+       <div className="relative w-64 h-64">
+         {/* Bouncing Circles */}
+         <motion.div
+           className="absolute top-0 left-1/2 w-12 h-12 rounded-full bg-gradient-to-r from-[#4C2B21] via-[#4C2B21] to-[#FFFFFF]"
+           animate={{
+             y: [0, -100, 0],
+             scale: [1, 1.5, 1],
+             rotate: [0, 360, 0],
+           }}
+           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+         />
+         <motion.div
+           className="absolute bottom-0 left-1/2 w-16 h-16 rounded-full bg-gradient-to-r from-[#FFFFFF] via-[#4C2B21] to-[#4C2B21]"
+           animate={{
+             y: [0, 100, 0],
+             scale: [1, 1.5, 1],
+             rotate: [0, -360, 0],
+           }}
+           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+         />
+         
+         {/* Rotating Triangle */}
+         <motion.div
+           className="absolute w-0 h-0 border-l-[50px] border-l-transparent border-r-[50px] border-r-transparent border-b-[100px] border-b-[#4C2B21]"
+           animate={{ rotate: [0, 360, 0] }}
+           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+           style={{ top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}
+         />
+
+         {/* Flashing Square */}
+         <motion.div
+           className="absolute w-16 h-16 bg-[#4C2B21]"
+           animate={{ opacity: [1, 0, 1] }}
+           transition={{ duration: 0.5, repeat: Infinity }}
+           style={{ top: "10%", left: "10%" }}
+         />
+       </div>
+     </div>
       )}
 
       {/* Header */}
@@ -46,10 +83,11 @@ export default function Home() {
           <a href="#" className="hover:text-gray-600 text-[#4C2B21] px-2 md:px-4 py-2">
             Villas
           </a>
-          <Button className="bg-[#4C2B21] text-white px-4 py-2 rounded-md hover:bg-brown-800">
+       
+        </nav>
+        <Button className="bg-[#4C2B21] text-white px-4 py-2 rounded-md hover:bg-brown-800">
             Schedule a call
           </Button>
-        </nav>
       </header>
 
       {/* Main Section */}
