@@ -2,100 +2,90 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="min-h-screen bg-gray-50 text-gray-800">
+    <header className="flex justify-between items-center py-6 px-8 bg-white shadow-md">
+      <div className="text-2xl font-bold">Goa Villas</div>
+      <nav className="hidden md:flex space-x-8">
+        <a href="#" className="hover:text-gray-600">Home</a>
+        <a href="#" className="hover:text-gray-600">About us</a>
+        <a href="#" className="hover:text-gray-600">Villas</a>
+        <button className="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-brown-800">
+          Schedule a call
+        </button>
+      </nav>
+    </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <main className="text-center py-20 px-4 md:px-20">
+      <h1 className="text-5xl font-bold mb-4">Your Dream Home Awaits</h1>
+      <h1 className="text-[120px] font-bold mb-4 bg-gradient-to-r from-gray-400 via-gray-500 to-gray-700 text-transparent bg-clip-text shadow-text">
+  Coming Soon
+</h1>
+      <p className="text-gray-600 text-lg mb-6">
+      &quot; Stay tuned for the ultimate property search experience &quot;
+      </p>
+      
+      <div className="max-w-md mx-auto flex items-center space-x-4 mb-6">
+        <input
+          type="email"
+          placeholder="Enter your email address"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brown-600"
+        />
+        <button className="bg-red-300 w-[140px] flex text-white px-6 py-2 rounded-lg hover:bg-brown-800">
+          Notify Me
+        </button>
+      </div>
+
+      <div className="flex justify-center">
+
+      
+      <a href="tel:+919873344942" className="block bg-gray-300 rounded-full px-2 py-2 w-[500px] items-center justify-center text-gray-500 mb-16">
+        Call/WhatsApp us at +91 9873344942
+      </a>
+      </div>
+
+      <section className="px-8 py-4 bg-[#FBF8F4] mx-0  md:px-0">
+        <h2 className="text-3xl font-semibold mb-8">Luxury Living in the Heart of Goa</h2>
+        <p className="max-w-xl mx-auto mb-12 text-gray-600">
+          Discover the perfect blend of modern comforts and tropical charm at Goa Villas. Our premium villas are designed to provide you with an unparalleled living experience.
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {/* Replace the src with actual image URLs */}
+          <div className="relative overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/image1.jpg"
+              alt="Villa 1"
+              width={500}
+              height={300}
+              className="object-cover"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
+          <div className="relative overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+            <Image
+              src="/image2.jpg"
+              alt="Villa 2"
+              width={500}
+              height={300}
+              className="object-cover"
+            />
+          </div>
+          <div className="relative overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+            <Image
+              src="/image3.jpg"
+              alt="Villa 3"
+              width={500}
+              height={300}
+              className="object-cover"
+            />
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+    </main>
+
+    <footer className="py-8 text-center text-gray-500">
+      &copy; 2024 Goa Villas. All rights reserved.
+    </footer>
+  </div>
+
   );
 }
