@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-800">
@@ -83,6 +84,10 @@ export default function Home() {
     </main>
 
     <footer className="py-8 text-center text-gray-500">
+      <div className="flex justify-center items-center">
+      <p>instagram</p> <p> twitter</p> <p>facebook</p>
+        
+      </div>
       &copy; 2024 Goa Villas. All rights reserved.
     </footer>
   </div>
