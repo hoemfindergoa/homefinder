@@ -10,6 +10,8 @@ import image2 from "../app/assests/image2.png";
 import image3 from "../app/assests/image3.png";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { LinkedInLogoIcon } from "@radix-ui/react-icons";
+import {InstagramLogoIcon} from "@radix-ui/react-icons";
 
 export default function Home() {
   const [introVisible, setIntroVisible] = useState<boolean>(true);
@@ -140,8 +142,11 @@ export default function Home() {
           </a>
         </div>
 
+
+      </main>
+
         {/* Section with Villas */}
-        <section className="px-4 py-4 bg-[#FBF8F4] md:px-0">
+        <section className="px-4 py-4 text-center  md:px-20 bg-[#FBF8F4] ">
           <motion.h2
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -198,7 +203,32 @@ export default function Home() {
             </motion.div>
           </div>
         </section>
-      </main>
+
+      <footer className="bg-[#FBF8F4] px-6 py-8 border-t border-gray-300">
+  <div className="container mx-auto flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
+    <div className="flex items-center space-x-4">
+      <span className="font-semibold text-black">Follow us on -</span>
+      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+      <InstagramLogoIcon/>
+      </a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+      <LinkedInLogoIcon/>
+      </a>
+    </div>
+
+    <div className="text-black text-center md:text-left">
+      <span className="font-semibold">Need Support?</span>
+      <a href="mailto:Care@Homefinderr.com" className="ml-2">
+        Care@Homefinderr.com
+      </a>
+    </div>
+  </div>
+
+  <div className="mt-8 border-t border-gray-300 pt-4 text-center text-gray-500 text-sm">
+    Homefinderr©copyright2024 All Rights Reserved.
+  </div>
+</footer>
+
     </div>
   );
 }
