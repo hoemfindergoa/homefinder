@@ -98,37 +98,32 @@ export default function Home() {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-4xl md:text-5xl mb-2"
+          className="text-2xl md:text4xl mb-2"
         >
           Your Dream Home Awaits
         </motion.h1>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 2, y: 0 }}
-          transition={{ delay: 0.3, duration: 1 }}
-          className="text-6xl md:text-[120px]  font-bold mb-4 text-shadow-lg text-transparent bg-clip-text bg-gradient-to-r from-[#403D3D] via-[#403D3D] to-[#4C2B21] animate-glow"
-        >
-          Coming Soon
-        </motion.h1>
+        <h1 className="text-6xl pb-6 md:text-[120px] font-bold mb-4 text-shadow-lg text-transparent bg-clip-text bg-gradient-to-b from-[#4C2B21] via-[#403D3D] to-[#5e5858]">
+  Coming Soon
+</h1>
 
         <motion.p
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 1 }}
-          className="text-[#403D3D] text-lg md:text-2xl mb-8"
+          className="text-[#403D3D] text-lg md:text-xl mb-8"
         >
           "Stay tuned for the ultimate property search experience"
         </motion.p>
 
         {/* Email Input */}
-        <div className="w-full max-w-lg px-2 mx-auto border border-[#7A7979] rounded-full flex items-center py-2 mb-4">
+        <div className="w-full max-w-lg  py-1  px-1 mx-auto border border-[#7A7979] rounded-full flex items-center mb-4">
           <Input
             type="email"
             placeholder="Enter your email address"
             className="w-3/4 mx-4 border-none py-2"
           />
-          <Button className="bg-[#4C2B21] w-1/4 text-[10px]  md:text-base font-bold text-white py-2 md:py-6 rounded-full hover:bg-brown-800">
+          <Button className="bg-[#4C2B21]  w-1/4 text-[10px]  md:text-base  text-white py-2 md:py-6 rounded-full hover:bg-brown-800">
             Notify Me
           </Button>
         </div>
@@ -136,7 +131,7 @@ export default function Home() {
         <div className="flex justify-center">
           <a
             href="tel:+919873344942"
-            className="block bg-[#F6F4F4] rounded-full px-4 py-2 w-full max-w-md text-gray-500 mb-16"
+            className="block bg-[#F6F4F4] rounded-full px-4 py-2 w-full max-w-md text-[#2D2C2C] mb-16"
           >
             Call/WhatsApp us at +91 9873344942
           </a>
@@ -204,8 +199,8 @@ export default function Home() {
           </div>
         </section>
 
-      <footer className="bg-[#FBF8F4] px-6 py-8 border-t border-gray-300">
-  <div className="container mx-auto flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
+      <footer className="bg-[#FBF8F4] px-6  py-8 border-t border-gray-300">
+  <div className="container mx-auto flex pt-6 flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
     <div className="flex items-center space-x-4">
       <span className="font-semibold text-black">Follow us on -</span>
       <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
@@ -218,13 +213,13 @@ export default function Home() {
 
     <div className="text-black text-center md:text-left">
       <span className="font-semibold">Need Support?</span>
-      <a href="mailto:Care@Homefinderr.com" className="ml-2">
+      <a  href="mailto:Care@Homefinderr.com" className= "text-sm ml-2">
         Care@Homefinderr.com
       </a>
     </div>
   </div>
 
-  <div className="mt-8 border-t border-gray-300 pt-4 text-center text-gray-500 text-sm">
+  <div className="mt-8 border-t border-gray-300 pt-4  text-[#3F3E3E] text-sm">
     Homefinderr©copyright2024 All Rights Reserved.
   </div>
 </footer>
