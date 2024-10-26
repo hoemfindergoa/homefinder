@@ -143,7 +143,7 @@ export default function Home() {
             </div>
 
             <div
-              className="pl-[30px] pr-9 pt-[15px] pb-2.5 bg-[#4c2b21] text-white text-xl font-['Gilroy-Bold'] font-normal rounded-[11px] hover:bg-[#3e2a1d] transition duration-200"
+              className="pl-[30px] pr-9 pt-[15px] pb-2.5 bg-[#4c2b21] text-white text-xl font-gilroy_medium font-normal rounded-[11px] hover:bg-[#3e2a1d] transition duration-200"
               onClick={toggleMenu}
             >
               Schedule a call
@@ -153,12 +153,12 @@ export default function Home() {
       </nav>
 
       <div>
-        <main className="text-center py-10 px-4 md:px-20">
+        <main className="text-center md:py-10 py-2 px-4 md:px-20">
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="md:text-4xl text-xl md:pt-[6px] pt-2 gilroy_medium md:text-[40px] "
+            className="md:text-4xl text-xl md:pt-[6px]  gilroy_medium md:text-[40px] "
           >
             Your Dream Home Awaits
           </motion.h1>
@@ -171,14 +171,14 @@ export default function Home() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 1 }}
-            className="text-[#403D3D] font-gilroy_medium md:text-[30px]  text-xl md:font-[28px]  pt-[15px]"
+            className="text-[#403D3D] font-gilroy_medium md:text-[30px]  text-xl md:font-[28px]  pt-[5px]"
           >
             "Stay tuned for the ultimate property search experience"
           </motion.p>
 
           {/* Email Input */}
           <div className="pt-[55px] ">
-            <div className="md:w-[800px] w-[400px] mt-[10px] py-1  px-1 mx-auto border border-[#7A7979] rounded-full flex items-center     ">
+            <div className="md:w-[800px] w-[350px] mt-[10px] py-1  px-1 mx-auto border border-[#7A7979] rounded-full flex items-center     ">
               <Input
                 type="email"
                 placeholder="Enter your email address"
@@ -191,7 +191,7 @@ export default function Home() {
           </div>
 
           <div className="pt-[55px] mb-[15px]">
-<div className="md:w-[832px]  w-[400px] h-[83px] md:pl-[146px] justify-center md:pr-[173px] pt-[26px] pb-[21px] bg-[#f6f4f4] rounded-[19px] items-center inline-flex">
+<div className="md:w-[832px]  w-[350px] h-[43px] md:h-[83px] md:pl-[146px] justify-center md:pr-[173px] pt-[26px] pb-[21px] bg-[#f6f4f4] rounded-[19px] items-center inline-flex">
 <div className="text-[#2d2c2c] md:text-3xl text-[15px] font-normal font-gilroy_medium">Call/WhatsApp us at +91 9873344942 </div>
 </div>
           </div>
@@ -208,7 +208,7 @@ export default function Home() {
           >
             Luxury Living in the Heart of Goa
           </motion.h2>
-          <p className="max-w-xl md:text-xl  text-sm font-gilroy mx-auto mb-12 text-gray-600">
+          <p className="max-w-xl md:text-xl  text-sm font-gilroy mx-auto mb-8 text-gray-600">
             Discover the perfect blend of modern comforts and tropical charm at
             Goa Villas. Our premium villas are designed to provide you with an
             unparalleled living experience.
