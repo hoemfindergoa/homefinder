@@ -2,6 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Importing font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* In your globals.css or styles.css file */
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./fonts/Gilroy-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GilroyBold';
+  src: url('./fonts/Gilroy-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'GilroyMedium';
+  src: url('./fonts/Gilroy-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'GilroyLight';
+  src: url('./fonts/Gilroy-Light.ttf') format('truetype');
+}
+
+
+
+
 @layer base {
   :root {
 
@@ -163,6 +191,17 @@
 
 .shadow-lg {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+@layer utilities {
+  @keyframes glow {
+    0%, 100% { color: #ffffff; text-shadow: 0 0 5px #ff99cc, 0 0 10px #ff99cc, 0 0 15px #ff99cc; }
+    50% { color: #ff99cc; text-shadow: 0 0 15px #ff99cc, 0 0 20px #ff99cc, 0 0 25px #ff99cc; }
+  }
+
+  .glow {
+    animation: glow 1s ease-in-out infinite;
+  }
 }
 
 

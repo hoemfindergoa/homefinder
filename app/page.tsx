@@ -1,5 +1,4 @@
 "use client"; // Needed for Next.js components using hooks
-
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -12,9 +11,14 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { LinkedInLogoIcon } from "@radix-ui/react-icons";
 import {InstagramLogoIcon} from "@radix-ui/react-icons";
-
 export default function Home() {
   const [introVisible, setIntroVisible] = useState<boolean>(true);
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
   useEffect(() => {
     const timer = setTimeout(() => setIntroVisible(false), 1000);
     return () => clearTimeout(timer);
@@ -66,91 +70,136 @@ export default function Home() {
      </div>
       )}
 
-      {/* Header */}
-      <header className="flex justify-between items-center py-2 px-4 md:px-8 bg-white shadow-md">
-        <Image
-          className="rounded-full"
-          height={50}
-          width={50}
-          alt="logo"
-          src={image}
-        />
-        <nav className="hidden md:flex space-x-4 md:space-x-8">
-          <a href="#" className="hover:text-gray-600 text-[#4C2B21] px-2 md:px-4 py-2">
-            Home
-          </a>
-          <a href="#" className="hover:text-gray-600 text-[#4C2B21] px-2 md:px-4 py-2">
-            About us
-          </a>
-          <a href="#" className="hover:text-gray-600 text-[#4C2B21] px-2 md:px-4 py-2">
-            Villas
-          </a>
-       
-        </nav>
-        <Button className="bg-[#4C2B21] text-white px-4 py-2 rounded-md hover:bg-brown-800">
-            Schedule a call
-          </Button>
-      </header>
-
-      {/* Main Section */}
-      <main className="text-center py-10 px-4 md:px-20">
-        <motion.h1
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="text-2xl md:text4xl mb-2"
-        >
-          Your Dream Home Awaits
-        </motion.h1>
-
-        <h1 className="text-6xl pb-6 md:text-[120px] font-bold mb-4 text-shadow-lg text-transparent bg-clip-text bg-gradient-to-b from-[#4C2B21] via-[#403D3D] to-[#5e5858]">
-  Coming Soon
-</h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 1 }}
-          className="text-[#403D3D] text-lg md:text-xl mb-8"
-        >
-          "Stay tuned for the ultimate property search experience"
-        </motion.p>
-
-        {/* Email Input */}
-        <div className="w-full max-w-lg  py-1  px-1 mx-auto border border-[#7A7979] rounded-full flex items-center mb-4">
-          <Input
-            type="email"
-            placeholder="Enter your email address"
-            className="w-3/4 mx-4 border-none py-2"
+<nav className="flex items-center justify-between p-4 md:px-8 lg:px-16 w-full">
+        {/* Logo */}
+        <div className="flex items-center">
+          <Image
+            width={110}
+            height={110}
+            alt="Logo"
+            src={image}
+            className=" md:w-[100px] w-[80px] rounded-full"
           />
-          <Button className="bg-[#4C2B21]  w-1/4 text-[10px]  md:text-base  text-white py-2 md:py-6 rounded-full hover:bg-brown-800">
-            Notify Me
-          </Button>
         </div>
 
-        <div className="flex justify-center">
-          <a
-            href="tel:+919873344942"
-            className="block bg-[#F6F4F4] rounded-full px-4 py-2 w-full max-w-md text-[#2D2C2C] mb-16"
+        {/* Desktop Links */}
+        <div className="hidden md:flex ml-[500px] space-x-8 items-center text-[#777577] font-['Nunito']">
+          <div className="text-black text-3xl font-gilroy font-normal hover:text-gray-600 leading-none">
+            Home
+          </div>
+          <div className="text-black text-3xl font-gilroy font-normal hover:text-gray-600 leading-none">
+            About us
+          </div>
+          <div className="text-black text-3xl font-gilroy font-normal hover:text-gray-600 leading-none">
+            Villas
+          </div>
+        </div>
+
+        {/* Schedule a Call Button (Desktop) */}
+        <div className="hidden md:block">
+   
+<div className="w-[279px] h-[62px] pl-[30px] pr-9 pt-[15px] pb-2.5 bg-[#4c2b21] rounded-[11px] justify-start items-center inline-flex">
+<div className="text-white text-3xl font-normal font-gilroy_medium ">Schedule a call</div>
+</div>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={toggleMenu}
+          className="md:hidden text-gray-800 text-3xl  focus:outline-none"
+        >
+          ☰
+        </button>
+
+        {/* Mobile Menu */}
+        {isOpen && (
+          <div className="absolute top-[90px] left-0 w-full bg-white    flex flex-col items-center py-4 space-y-4 md:hidden text-[#777577] font-['Nunito']">
+            <div
+              className="text-black text-xl font-gilroy font-normal hover:text-gray-600 leading-none"
+              onClick={toggleMenu}
+            >
+              Home
+            </div>
+            <div
+              className="text-black text-xl font-gilroy font-normal hover:text-gray-600 leading-none"
+              onClick={toggleMenu}
+            >
+              About us
+            </div>
+            <div
+              className="text-black text-xl font-gilroy font-normal hover:text-gray-600 leading-none"
+              onClick={toggleMenu}
+            >
+              Villas
+            </div>
+
+            <div
+              className="pl-[30px] pr-9 pt-[15px] pb-2.5 bg-[#4c2b21] text-white text-xl font-['Gilroy-Bold'] font-normal rounded-[11px] hover:bg-[#3e2a1d] transition duration-200"
+              onClick={toggleMenu}
+            >
+              Schedule a call
+            </div>
+          </div>
+        )}
+      </nav>
+
+      <div>
+        <main className="text-center py-10 px-4 md:px-20">
+          <motion.h1
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="text-4xl pt-[6px] gilroy_medium md:text-[40px] "
           >
-            Call/WhatsApp us at +91 9873344942
-          </a>
-        </div>
+            Your Dream Home Awaits
+          </motion.h1>
 
+        <div className=" text-[80px] pt-[5px] md:text-[90px] font-gilroy_bold text-shadow-lg text-transparent bg-clip-text bg-gradient-to-b from-[#4C2B21] via-[#403D3D] to-[#5e5858]">
+            Coming Soon
+          </div>
 
-      </main>
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 1 }}
+            className="text-[#403D3D] font-gilroy_medium text-[30px] md:font-[28px]  pt-[15px]"
+          >
+            "Stay tuned for the ultimate property search experience"
+          </motion.p>
+
+          {/* Email Input */}
+          <div className="pt-[55px] ">
+            <div className=" w-[800px] mt-[10px] py-1  px-1 mx-auto border border-[#7A7979] rounded-full flex items-center     ">
+              <Input
+                type="email"
+                placeholder="Enter your email address"
+                className="w-3/4 placeholder-black text-[25px] font-gilroy_light  text-black  mx-4 border-none my-2 py-4"
+              />
+              <Button className="bg-[#4C2B21] font-gilroy_medium  w-1/4 text-[8px]  md:text-[25px]   text-white py-2 md:py-6 rounded-full hover:bg-brown-800">
+                Notify Me
+              </Button>
+            </div>
+          </div>
+
+          <div className="pt-[55px] mb-[15px]">
+<div className="w-[832px] h-[83px] pl-[146px] pr-[173px] pt-[26px] pb-[21px] bg-[#f6f4f4] rounded-[19px] justify-start items-center inline-flex">
+<div className="text-[#2d2c2c] text-3xl font-normal font-gilroy_medium">Call/WhatsApp us at +91 9873344942 </div>
+</div>
+          </div>
+        </main>
+      </div>
 
         {/* Section with Villas */}
-        <section className="px-4 py-4 text-center  md:px-20 bg-[#FBF8F4] ">
+        <section className="px-4 py-4 text-center pt-[45px] pb-[50px]  md:px-20 bg-[#FBF8F4] ">
           <motion.h2
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="text-2xl md:text-3xl font-semibold mb-8"
+            className="text-2xl md:text-3xl font-gilroy_medium mb-8"
           >
             Luxury Living in the Heart of Goa
           </motion.h2>
-          <p className="max-w-xl mx-auto mb-12 text-gray-600">
+          <p className="max-w-xl text-xl font-gilroy mx-auto mb-12 text-gray-600">
             Discover the perfect blend of modern comforts and tropical charm at
             Goa Villas. Our premium villas are designed to provide you with an
             unparalleled living experience.
@@ -160,7 +209,7 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="relative overflow-hidden rounded-lg shadow-lg"
+              className="relative "
             >
               <Image
                 src={image1}
@@ -173,7 +222,7 @@ export default function Home() {
 
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="relative overflow-hidden rounded-lg shadow-lg"
+              className="relative "
             >
               <Image
                 src={image2}
@@ -186,7 +235,7 @@ export default function Home() {
 
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="relative overflow-hidden rounded-lg shadow-lg"
+              className="relative overflow-hidden "
             >
               <Image
                 src={image3}
@@ -199,7 +248,9 @@ export default function Home() {
           </div>
         </section>
 
-      <footer className="bg-[#FBF8F4] px-6  py-8 border-t border-gray-300">
+
+
+      <footer className="bg-[#FBF8F4] px-8 py-8 border-t border-gray-300">
   <div className="container mx-auto flex pt-6 flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
     <div className="flex items-center space-x-4">
       <span className="font-semibold text-black">Follow us on -</span>
