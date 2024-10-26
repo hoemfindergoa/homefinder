@@ -11,6 +11,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { LinkedInLogoIcon } from "@radix-ui/react-icons";
 import {InstagramLogoIcon} from "@radix-ui/react-icons";
+
+import Link from "next/link";
 export default function Home() {
   const [introVisible, setIntroVisible] = useState<boolean>(true);
 
@@ -85,13 +87,20 @@ export default function Home() {
         {/* Desktop Links */}
         <div className="hidden md:flex ml-[500px] space-x-8 items-center text-[#777577] font-['Nunito']">
           <div className="text-black text-3xl font-gilroy font-normal hover:text-gray-600 leading-none">
+
+            <Link href="/">
             Home
+            </Link>
           </div>
           <div className="text-black text-3xl font-gilroy font-normal hover:text-gray-600 leading-none">
+          <Link href="/aboutus">
             About us
+            </Link>
           </div>
           <div className="text-black text-3xl font-gilroy font-normal hover:text-gray-600 leading-none">
-            Villas
+          <Link href="/villas">
+          Villas
+            </Link>
           </div>
         </div>
 
@@ -149,12 +158,12 @@ export default function Home() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="text-4xl pt-[6px] gilroy_medium md:text-[40px] "
+            className="md:text-4xl text-xl md:pt-[6px] pt-2 gilroy_medium md:text-[40px] "
           >
             Your Dream Home Awaits
           </motion.h1>
 
-        <div className=" text-[80px] pt-[5px] md:text-[90px] font-gilroy_bold text-shadow-lg text-transparent bg-clip-text bg-gradient-to-b from-[#4C2B21] via-[#403D3D] to-[#5e5858]">
+        <div className=" text-[40px] pt-[5px] md:text-[90px] font-gilroy_bold text-shadow-lg text-transparent bg-clip-text bg-gradient-to-b from-[#4C2B21] via-[#403D3D] to-[#5e5858]">
             Coming Soon
           </div>
 
@@ -162,18 +171,18 @@ export default function Home() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 1 }}
-            className="text-[#403D3D] font-gilroy_medium text-[30px] md:font-[28px]  pt-[15px]"
+            className="text-[#403D3D] font-gilroy_medium md:text-[30px]  text-xl md:font-[28px]  pt-[15px]"
           >
             "Stay tuned for the ultimate property search experience"
           </motion.p>
 
           {/* Email Input */}
           <div className="pt-[55px] ">
-            <div className=" w-[800px] mt-[10px] py-1  px-1 mx-auto border border-[#7A7979] rounded-full flex items-center     ">
+            <div className="md:w-[800px] w-[400px] mt-[10px] py-1  px-1 mx-auto border border-[#7A7979] rounded-full flex items-center     ">
               <Input
                 type="email"
                 placeholder="Enter your email address"
-                className="w-3/4 placeholder-black text-[25px] font-gilroy_light  text-black  mx-4 border-none my-2 py-4"
+                className="w-3/4 placeholder-black md:text-[25px] text-15px font-gilroy_light  text-black  mx-4 border-none md:my-2 md:py-4 py-1"
               />
               <Button className="bg-[#4C2B21] font-gilroy_medium  w-1/4 text-[8px]  md:text-[25px]   text-white py-2 md:py-6 rounded-full hover:bg-brown-800">
                 Notify Me
@@ -182,15 +191,15 @@ export default function Home() {
           </div>
 
           <div className="pt-[55px] mb-[15px]">
-<div className="w-[832px] h-[83px] pl-[146px] pr-[173px] pt-[26px] pb-[21px] bg-[#f6f4f4] rounded-[19px] justify-start items-center inline-flex">
-<div className="text-[#2d2c2c] text-3xl font-normal font-gilroy_medium">Call/WhatsApp us at +91 9873344942 </div>
+<div className="md:w-[832px]  w-[400px] h-[83px] md:pl-[146px] justify-center md:pr-[173px] pt-[26px] pb-[21px] bg-[#f6f4f4] rounded-[19px] items-center inline-flex">
+<div className="text-[#2d2c2c] md:text-3xl text-[15px] font-normal font-gilroy_medium">Call/WhatsApp us at +91 9873344942 </div>
 </div>
           </div>
         </main>
       </div>
 
         {/* Section with Villas */}
-        <section className="px-4 py-4 text-center pt-[45px] pb-[50px]  md:px-20 bg-[#FBF8F4] ">
+        <section className="px-[28px] py-4 text-center pt-[45px] pb-[50px] md:px-20 bg-[#FBF8F4] ">
           <motion.h2
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -199,24 +208,24 @@ export default function Home() {
           >
             Luxury Living in the Heart of Goa
           </motion.h2>
-          <p className="max-w-xl text-xl font-gilroy mx-auto mb-12 text-gray-600">
+          <p className="max-w-xl md:text-xl  text-sm font-gilroy mx-auto mb-12 text-gray-600">
             Discover the perfect blend of modern comforts and tropical charm at
             Goa Villas. Our premium villas are designed to provide you with an
             unparalleled living experience.
           </p>
 
           {/* Villa Images */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 justify-center items-center sm:grid-cols-2 md:grid-cols-3 gap-6">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="relative "
+              className=" "
             >
               <Image
                 src={image1}
                 alt="Villa 1"
                 width={368}
                 height={724}
-                className="object-cover"
+                className=""
               />
             </motion.div>
 
