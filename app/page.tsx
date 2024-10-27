@@ -86,13 +86,15 @@ export default function Home() {
         </div>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex ml-[500px] space-x-8 items-center text-[#777577] font-['Nunito']">
-          <div className="text-black text-3xl font-gilroy font-normal hover:text-gray-600 leading-none">
+        <div className="hidden md:flex ml-[600px] space-x-8  items-center text-[#777577] font-['Nunito']">
+      <div className="gap-4">
+      <div className="text-black text-3xl font-gilroy font-normal hover:text-gray-600 leading-none">
 
-            <Link href="/">
-            Home
-            </Link>
-          </div>
+<Link href="/">
+Home
+</Link>
+</div>
+      </div>
           <div className="text-black text-3xl font-gilroy font-normal hover:text-gray-600 leading-none">
           <Link href="/aboutus">
             About us
@@ -108,7 +110,7 @@ export default function Home() {
         {/* Schedule a Call Button (Desktop) */}
         <div className="hidden md:block">
    
-<div className="w-[279px] h-[62px] pl-[30px] pr-9 pt-[15px] pb-2.5 bg-[#4c2b21] rounded-[11px] justify-start items-center inline-flex">
+<div className="w-[270px] pr-[3px] h-[62px] py-[35px]  bg-[#4c2b21] rounded-[11px] justify-center items-center inline-flex">
 <div className="text-white text-3xl font-normal font-gilroy_medium ">Schedule a call</div>
 </div>
         </div>
@@ -144,7 +146,7 @@ export default function Home() {
             </div>
 
             <div
-              className="pl-[30px] pr-9  pb-2.5 bg-[#4c2b21] text-white text-xl font-gilroy_medium font-normal rounded-[11px] hover:bg-[#3e2a1d] transition duration-200"
+              className=" bg-[#4c2b21] flex justify-center items-center text-white text-xl font-gilroy_medium font-normal rounded-[11px] hover:bg-[#3e2a1d] transition duration-200"
               onClick={toggleMenu}
             >
               Schedule a call
@@ -159,7 +161,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="md:text-4xl text-xl md:pt-[6px] pl-[10px]  gilroy_medium md:text-[40px] "
+            className=" text-4xl md:pt-[6px] pl-[10px]  gilroy_medium md:text-[38  px] "
           >
             Your Dream Home Awaits
           </motion.h1>
