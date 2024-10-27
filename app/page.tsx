@@ -1,6 +1,6 @@
 "use client"; // Needed for Next.js components using hooks
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, Variants, useAnimation } from "framer-motion";
 import Image from "next/image";
 import { Analytics } from "@vercel/analytics/react";
 import image from "../app/assests/Logo-Brown_Instagram.jpg";
@@ -15,63 +15,47 @@ import logofull from "../app/assests/Logo_full.png"
 
 import Link from "next/link";
 export default function Home() {
-  const [introVisible, setIntroVisible] = useState<boolean>(true);
-
   const [isOpen, setIsOpen] = useState(false);
+  const controls = useAnimation();
+
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  const textVariants: Variants = {
+    faded: { opacity: 0.2 },
+    lessVisible: { opacity: 0.5 },
+    moreVisible: { opacity: 0.8 },
+    fullVisible: { opacity: 1 },
+  };
+
+  // Run the intro fade-in and then animation sequence
   useEffect(() => {
-    const timer = setTimeout(() => setIntroVisible(false), 1000);
-    return () => clearTimeout(timer);
-  }, []);
+    const sequence = async () => {
+      // Start with low opacity
+      await controls.start("faded");
+
+      // Gradually increase opacity over iterations
+      for (let i = 0; i < 3; i++) {
+        // Select opacity level based on iteration
+        const opacityVariant = i === 0 ? "faded" : i === 1 ? "lessVisible" : i === 2 ? "moreVisible" : "fullVisible";
+
+        // Apply fade-out and fade-in at each opacity level
+        await controls.start(opacityVariant);
+        await controls.start("faded");
+      }
+
+      // End with full opacity
+      controls.start("fullVisible");
+    };
+
+    sequence();
+  }, [controls]);
 
   return (
     <div className="relative min-h-screen bg-white text-gray-800">
       <Analytics />
-      {introVisible && (
-       <div className="fixed inset-0 z-50 flex items-center justify-center bg-white text-[#4C2B21]">
-       {/* Crazy Loader Animation */}
-       <div className="relative w-64 h-64">
-         {/* Bouncing Circles */}
-         <motion.div
-           className="absolute top-0 left-1/2 w-12 h-12 rounded-full bg-gradient-to-r from-[#4C2B21] via-[#4C2B21] to-[#FFFFFF]"
-           animate={{
-             y: [0, -100, 0],
-             scale: [1, 1.5, 1],
-             rotate: [0, 360, 0],
-           }}
-           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-         />
-         <motion.div
-           className="absolute bottom-0 left-1/2 w-16 h-16 rounded-full bg-gradient-to-r from-[#FFFFFF] via-[#4C2B21] to-[#4C2B21]"
-           animate={{
-             y: [0, 100, 0],
-             scale: [1, 1.5, 1],
-             rotate: [0, -360, 0],
-           }}
-           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-         />
-         
-         {/* Rotating Triangle */}
-         <motion.div
-           className="absolute w-0 h-0 border-l-[50px] border-l-transparent border-r-[50px] border-r-transparent border-b-[100px] border-b-[#4C2B21]"
-           animate={{ rotate: [0, 360, 0] }}
-           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-           style={{ top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}
-         />
-
-         {/* Flashing Square */}
-         <motion.div
-           className="absolute w-16 h-16 bg-[#4C2B21]"
-           animate={{ opacity: [1, 0, 1] }}
-           transition={{ duration: 0.5, repeat: Infinity }}
-           style={{ top: "10%", left: "10%" }}
-         />
-       </div>
-     </div>
-      )}
 
 <nav className="flex items-center justify-between p-4 md:px-8 lg:px-16 w-full">
         {/* Logo */}
@@ -166,9 +150,33 @@ Home
             Your Dream Home Awaits
           </motion.h1>
 
-        <div className=" text-[40px] pt-[5px] md:text-[130px] font-gilroy_bold text-shadow-lg text-transparent bg-clip-text bg-gradient-to-b from-[#4C2B21] via-[#403D3D] to-[#5e5858]">
-            Coming Soon
-          </div>
+         {/* "Coming Soon" Animation */}
+         <div className="flex justify-center gap-2">
+        {/* "Coming" word animation */}
+        <motion.span
+          className="text-[40px] md:text-[130px] font-gilroy_bold text-shadow-lg text-transparent bg-clip-text bg-gradient-to-b from-[#4C2B21] via-[#403D3D] to-[#5e5858]"
+          variants={textVariants}
+          initial="initialFade"
+          animate={controls}
+          transition={{ duration: 0.15, ease: "easeOut" }}
+        >
+          Coming
+        </motion.span>
+
+        {/* "Soon" word animation */}
+        <motion.span
+          className="text-[40px] md:text-[130px] font-gilroy_bold text-shadow-lg text-transparent bg-clip-text bg-gradient-to-b from-[#4C2B21] via-[#403D3D] to-[#5e5858]"
+          variants={textVariants}
+          initial="initialFade"
+          animate={controls}
+          transition={{ duration: 0.15, delay: 0.07, ease: "easeOut" }}
+        >
+          Soon
+        </motion.span>
+      </div>
+
+
+
 
           <motion.p
             initial={{ opacity: 0, y: 50 }}
