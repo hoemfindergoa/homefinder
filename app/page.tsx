@@ -81,7 +81,7 @@ export default function Home() {
             height={110}
             alt="Logo"
             src={image}
-            className=" md:w-[100px] w-[80px] rounded-full"
+            className=" md:w-[100px] pb-[20px] w-[80px] rounded-full"
           />
         </div>
 
