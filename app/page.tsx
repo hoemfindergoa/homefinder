@@ -13,15 +13,10 @@ import { LinkedInLogoIcon } from "@radix-ui/react-icons";
 import {InstagramLogoIcon} from "@radix-ui/react-icons";
 import logofull from "../app/assests/Logo_full.png"
 
-import Link from "next/link";
+  import AnimatedTitle from "@/components/Animatedtext";
 export default function Home() {
-  const [isOpen, setIsOpen] = useState(false);
   const controls = useAnimation();
 
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
 
   const textVariants: Variants = {
     faded: { opacity: 0.2 },
@@ -57,87 +52,7 @@ export default function Home() {
     <div className="relative min-h-screen bg-white text-gray-800">
       <Analytics />
 
-<nav className="flex items-center justify-between p-4 md:px-8 lg:px-16 w-full">
-        {/* Logo */}
-        <div className="flex items-center">
-          <Image
-            width={110}
-            height={110}
-            alt="Logo"
-            src={image}
-            className=" md:w-[100px] pb-[20px] w-[80px] rounded-full"
-          />
-        </div>
 
-        {/* Desktop Links */}
-        <div className="hidden md:flex ml-[600px] space-x-8  items-center text-[#777577] font-['Nunito']">
-      <div className="gap-4">
-      <div className="text-black text-3xl font-gilroy font-normal hover:text-gray-600 leading-none">
-
-<Link href="/">
-Home
-</Link>
-</div>
-      </div>
-          <div className="text-black text-3xl font-gilroy font-normal hover:text-gray-600 leading-none">
-          <Link href="/aboutus">
-            About us
-            </Link>
-          </div>
-          <div className="text-black text-3xl font-gilroy font-normal hover:text-gray-600 leading-none">
-          <Link href="/villas">
-          Villas
-            </Link>
-          </div>
-        </div>
-
-        {/* Schedule a Call Button (Desktop) */}
-        <div className="hidden md:block">
-   
-<div className="w-[270px] pr-[3px] h-[62px] py-[35px]  bg-[#4c2b21] rounded-[11px] justify-center items-center inline-flex">
-<div className="text-white text-3xl font-normal font-gilroy_medium ">Schedule a call</div>
-</div>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          onClick={toggleMenu}
-          className="md:hidden text-gray-800 text-3xl  focus:outline-none"
-        >
-          ☰
-        </button>
-
-        {/* Mobile Menu */}
-        {isOpen && (
-          <div className="absolute top-[90px] left-0 w-full bg-white    flex flex-col items-center py-4 space-y-4 md:hidden text-[#777577] font-['Nunito']">
-            <div
-              className="text-black text-xl font-gilroy font-normal hover:text-gray-600 leading-none"
-              onClick={toggleMenu}
-            >
-              Home
-            </div>
-            <div
-              className="text-black text-xl font-gilroy font-normal hover:text-gray-600 leading-none"
-              onClick={toggleMenu}
-            >
-              About us
-            </div>
-            <div
-              className="text-black text-xl font-gilroy font-normal hover:text-gray-600 leading-none"
-              onClick={toggleMenu}
-            >
-              Villas
-            </div>
-
-            <div
-              className=" bg-[#4c2b21] flex justify-center items-center text-white text-xl font-gilroy_medium font-normal rounded-[11px] hover:bg-[#3e2a1d] transition duration-200"
-              onClick={toggleMenu}
-            >
-              Schedule a call
-            </div>
-          </div>
-        )}
-      </nav>
 
       <div>
         <main className="text-center md:py-10 py-2 px-4 md:px-20">
@@ -145,35 +60,18 @@ Home
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className=" text-4xl md:pt-[6px] pl-[10px]  gilroy_medium md:text-[38  px] "
+            className=" text-4xl md:pt-[2px] pl-[10px]  gilroy_medium md:text-[38px] "
           >
             Your Dream Home Awaits
           </motion.h1>
 
-         {/* "Coming Soon" Animation */}
-         <div className="flex justify-center gap-2">
-        {/* "Coming" word animation */}
-        <motion.span
-          className="text-[40px] md:text-[130px] font-gilroy_bold text-shadow-lg text-transparent bg-clip-text bg-gradient-to-b from-[#4C2B21] via-[#403D3D] to-[#5e5858]"
-          variants={textVariants}
-          initial="initialFade"
-          animate={controls}
-          transition={{ duration: 0.15, ease: "easeOut" }}
-        >
-          Coming
-        </motion.span>
+          <div className="text-[40px] md:text-[130px] font-gilroy_bold text-shadow-lg  text-black">
 
-        {/* "Soon" word animation */}
-        <motion.span
-          className="text-[40px] md:text-[130px] font-gilroy_bold text-shadow-lg text-transparent bg-clip-text bg-gradient-to-b from-[#4C2B21] via-[#403D3D] to-[#5e5858]"
-          variants={textVariants}
-          initial="initialFade"
-          animate={controls}
-          transition={{ duration: 0.15, delay: 0.07, ease: "easeOut" }}
-        >
-          Soon
-        </motion.span>
-      </div>
+
+          <AnimatedTitle />
+
+          </div>
+
 
 
 
@@ -279,11 +177,11 @@ Home
   <div className="container mx-auto flex  flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
     <div className="flex  md:text-xl justify-center items-center gap-3">
       <span className="font-semibold md:text-xl text-black">Follow us on -</span>
-      <a  className=" md:text-2xl pt-2"href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-      <InstagramLogoIcon/>
+      <a  className=" md:text-2xl "href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+      <InstagramLogoIcon width={25} height={25}   />
       </a>
-      <a className=" md:text-2xl pt-2" href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-      <LinkedInLogoIcon/>
+      <a className=" md:text-2xl " href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+      <LinkedInLogoIcon  width={25} height={25}  />
       </a>
     </div>
 
