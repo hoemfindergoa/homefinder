@@ -279,7 +279,7 @@ Home
       </a>
     </div>
 
-    <div className="text-black md:text-xl  md:pr-[10px] mb-[12px] text-center ">
+    <div className="text-black md:text-xl  md:pr-[10px] md:mb-[12px] text-center ">
       <span className="font-semibold md:pl-[50px]  ">Need Support ? -</span>
       <a  href="mailto:Care@Homefinderr.com" className= "md:text-xl ml-2">
         Care@Homefinderr.com
@@ -289,23 +289,25 @@ Home
 
 
 
-  <div className="flex md:px-[90px] md:mb-[20px] pt-10 bg-[#FBF8F4] justify-between">
+  
+</footer>
+
+
+<div className="flex border-t  md:px-[90px] md:pb-[20px] md:pt-[20px] bg-[#FBF8F4] justify-between">
 
 
 <div className="">
 <Image width={160} height={160} src={logofull} alt="logo">
 
 </Image>
-  </div>
-<div className=" bg-[#FBF8F4] border-t  md:px-[86px] border-gray-300 pt-8  text-[#3F3E3E] text-sm">
+  </div> 
+<div className=" bg-[#FBF8F4] flex    md:pr-[30px] md:text-xl    md:px-[86px] border-gray-300 pt-8  text-[#3F3E3E] text-sm">
     Homefinderr©copyright2024 All Rights Reserved.
   </div>
 
 
 </div>
 
-  
-</footer>
 
 
 
