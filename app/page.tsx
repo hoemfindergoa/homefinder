@@ -1,9 +1,8 @@
 "use client"; // Needed for Next.js components using hooks
-import { useEffect, useState } from "react";
-import { motion, Variants, useAnimation } from "framer-motion";
+import { useEffect } from "react";
+import { motion,  useAnimation } from "framer-motion";
 import Image from "next/image";
 import { Analytics } from "@vercel/analytics/react";
-import image from "../app/assests/Logo-Brown_Instagram.jpg";
 import image1 from "../app/assests/image1.png";
 import image2 from "../app/assests/image2.png";
 import image3 from "../app/assests/image3.png";
@@ -16,14 +15,6 @@ import logofull from "../app/assests/Logo_full.png"
   import AnimatedTitle from "@/components/Animatedtext";
 export default function Home() {
   const controls = useAnimation();
-
-
-  const textVariants: Variants = {
-    faded: { opacity: 0.2 },
-    lessVisible: { opacity: 0.5 },
-    moreVisible: { opacity: 0.8 },
-    fullVisible: { opacity: 1 },
-  };
 
   // Run the intro fade-in and then animation sequence
   useEffect(() => {
