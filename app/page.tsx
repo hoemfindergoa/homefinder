@@ -51,7 +51,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className=" text-4xl md:pt-[2px] pl-[10px]  gilroy_medium md:text-[38px] "
+            className=" text-2xl md:pt-[2px] pl-[10px]  gilroy_medium md:text-[38px] "
           >
             Your Dream Home Awaits
           </motion.h1>
