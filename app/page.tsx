@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { LinkedInLogoIcon } from "@radix-ui/react-icons";
 import {InstagramLogoIcon} from "@radix-ui/react-icons";
+import logofull from "../app/assests/Logo_full.png"
 
 import Link from "next/link";
 export default function Home() {
@@ -143,7 +144,7 @@ export default function Home() {
             </div>
 
             <div
-              className="pl-[30px] pr-9 pt-[15px] pb-2.5 bg-[#4c2b21] text-white text-xl font-gilroy_medium font-normal rounded-[11px] hover:bg-[#3e2a1d] transition duration-200"
+              className="pl-[30px] pr-9  pb-2.5 bg-[#4c2b21] text-white text-xl font-gilroy_medium font-normal rounded-[11px] hover:bg-[#3e2a1d] transition duration-200"
               onClick={toggleMenu}
             >
               Schedule a call
@@ -158,12 +159,12 @@ export default function Home() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="md:text-4xl text-xl md:pt-[6px]  gilroy_medium md:text-[40px] "
+            className="md:text-4xl text-xl md:pt-[6px] pl-[10px]  gilroy_medium md:text-[40px] "
           >
             Your Dream Home Awaits
           </motion.h1>
 
-        <div className=" text-[40px] pt-[5px] md:text-[90px] font-gilroy_bold text-shadow-lg text-transparent bg-clip-text bg-gradient-to-b from-[#4C2B21] via-[#403D3D] to-[#5e5858]">
+        <div className=" text-[40px] pt-[5px] md:text-[130px] font-gilroy_bold text-shadow-lg text-transparent bg-clip-text bg-gradient-to-b from-[#4C2B21] via-[#403D3D] to-[#5e5858]">
             Coming Soon
           </div>
 
@@ -171,7 +172,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 1 }}
-            className="text-[#403D3D] font-gilroy_medium md:text-[30px]  text-xl md:font-[28px]  pt-[5px]"
+            className="text-[#403D3D] font-gilroy md:text-[25px]  text-xl md:font-[28px]  pt-[35px]"
           >
             "Stay tuned for the ultimate property search experience"
           </motion.p>
@@ -182,40 +183,45 @@ export default function Home() {
               <Input
                 type="email"
                 placeholder="Enter your email address"
-                className="w-3/4 placeholder-black md:text-[25px] text-15px font-gilroy_light  text-black  mx-4 border-none md:my-2 md:py-4 py-1"
+                className="w-3/4 placeholder-black md:text-[25px] text-15px font-gilroy  text-black  mx-4 border-none md:my-2 md:py-[18px] py-1"
               />
-              <Button className="bg-[#4C2B21] font-gilroy_medium  w-1/4 text-[8px]  md:text-[25px]   text-white py-2 md:py-6 rounded-full hover:bg-brown-800">
+              <Button className="bg-[#4C2B21] font-gilroy   ml-[46px]  text-[8px]  md:text-[24px]  text-white py-2 md:py-[25px] rounded-full hover:bg-brown-800">
+                
+                <p className="text-[20px]">
+
                 Notify Me
+
+                </p>
               </Button>
             </div>
           </div>
 
-          <div className="pt-[55px] mb-[15px]">
-<div className="md:w-[832px]  w-[350px] h-[43px] md:h-[83px] md:pl-[146px] justify-center md:pr-[173px] pt-[26px] pb-[21px] bg-[#f6f4f4] rounded-[19px] items-center inline-flex">
-<div className="text-[#2d2c2c] md:text-3xl text-[15px] font-normal font-gilroy_medium">Call/WhatsApp us at +91 9873344942 </div>
+          <div className="pt-[55px] md:pl-[6px] mb-[15px]">
+<div className="md:w-[732px]  w-[350px] h-[43px] md:h-[83px] md:pl-[146px] justify-center md:pr-[173px] pt-[26px] pb-[21px] bg-[#f6f4f4] rounded-[19px] items-center inline-flex">
+<div className="text-[#2d2c2c] md:text-2xl text-[15px] font-normal font-gilroy_medium">Call/WhatsApp us at +91 9873344942 </div>
 </div>
           </div>
         </main>
       </div>
 
         {/* Section with Villas */}
-        <section className="px-[28px] py-4 text-center pt-[45px] pb-[50px] md:px-20 bg-[#FBF8F4] ">
+        <section className="px-[28px] py-4 text-center md:mt-[60px] pt-[85px] pb-[50px] md:px-20 bg-[#FBF8F4] ">
           <motion.h2
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="text-2xl md:text-3xl font-gilroy_medium mb-8"
+            className="text-2xl md:text-5xl font-gilroy_medium mb-[52px]"
           >
             Luxury Living in the Heart of Goa
           </motion.h2>
-          <p className="max-w-xl md:text-xl  text-sm font-gilroy mx-auto mb-8 text-gray-600">
+          <p className="max-w-xl md:text-xl  text-sm font-gilroy mx-auto mb-[52px] text-gray-600">
             Discover the perfect blend of modern comforts and tropical charm at
             Goa Villas. Our premium villas are designed to provide you with an
             unparalleled living experience.
           </p>
 
           {/* Villa Images */}
-          <div className="grid grid-cols-1 justify-center items-center sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 justify-center md:mb-[40px] items-center sm:grid-cols-2 md:grid-cols-3 gap-8 ml-[40px]">
             <motion.div
               whileHover={{ scale: 1.05 }}
               className=" "
@@ -259,30 +265,48 @@ export default function Home() {
 
 
 
-      <footer className="bg-[#FBF8F4] px-8 py-8 border-t border-gray-300">
-  <div className="container mx-auto flex pt-6 flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
-    <div className="flex items-center space-x-4">
-      <span className="font-semibold text-black">Follow us on -</span>
-      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+    <footer className="bg-[#FBF8F4] md:px-[120px] py-10 border-t border-gray-300">
+  <div className="container mx-auto flex  flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
+    <div className="flex  md:text-xl justify-center items-center gap-3">
+      <span className="font-semibold md:text-xl text-black">Follow us on -</span>
+      <a  className=" md:text-2xl pt-2"href="https://instagram.com" target="_blank" rel="noopener noreferrer">
       <InstagramLogoIcon/>
       </a>
-      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+      <a className=" md:text-2xl pt-2" href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
       <LinkedInLogoIcon/>
       </a>
     </div>
 
-    <div className="text-black text-center md:text-left">
-      <span className="font-semibold">Need Support?</span>
-      <a  href="mailto:Care@Homefinderr.com" className= "text-sm ml-2">
+    <div className="text-black md:text-xl  md:pr-[10px] mb-[12px] text-center ">
+      <span className="font-semibold md:pl-[50px]  ">Need Support ? -</span>
+      <a  href="mailto:Care@Homefinderr.com" className= "md:text-xl ml-2">
         Care@Homefinderr.com
       </a>
     </div>
   </div>
 
-  <div className="mt-8 border-t border-gray-300 pt-4  text-[#3F3E3E] text-sm">
+
+
+  <div className="flex md:px-[90px] md:mb-[20px] pt-10 bg-[#FBF8F4] justify-between">
+
+
+<div className="">
+<Image width={160} height={160} src={logofull} alt="logo">
+
+</Image>
+  </div>
+<div className=" bg-[#FBF8F4] border-t  md:px-[86px] border-gray-300 pt-8  text-[#3F3E3E] text-sm">
     Homefinderr©copyright2024 All Rights Reserved.
   </div>
+
+
+</div>
+
+  
 </footer>
+
+
+
 
     </div>
   );
