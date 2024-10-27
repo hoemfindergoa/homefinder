@@ -183,7 +183,7 @@ export default function Home() {
               <Input
                 type="email"
                 placeholder="Enter your email address"
-                className="w-3/4 placeholder-black md:text-[25px] text-15px font-gilroy  text-black  mx-4 border-none md:my-2 md:py-[18px] py-1"
+                className="w-3/4 placeholder-black md:text-[21px] text-15px font-gilroy  text-black  mx-4 border-none md:my-2 md:py-[18px] py-1"
               />
               <Button className="bg-[#4C2B21] font-gilroy   ml-[46px]  text-[8px]  md:text-[24px]  text-white py-2 md:py-[25px] rounded-full hover:bg-brown-800">
                 
@@ -197,8 +197,8 @@ export default function Home() {
           </div>
 
           <div className="pt-[55px] md:pl-[6px] mb-[15px]">
-<div className="md:w-[732px]  w-[350px] h-[43px] md:h-[83px] md:pl-[146px] justify-center md:pr-[173px] pt-[26px] pb-[21px] bg-[#f6f4f4] rounded-[19px] items-center inline-flex">
-<div className="text-[#2d2c2c] md:text-2xl text-[15px] font-normal font-gilroy_medium">Call/WhatsApp us at +91 9873344942 </div>
+<div className="md:w-[732px]  w-[350px] h-[43px] md:h-[83px] md:pl-[135px] justify-center md:pr-[173px] pt-[26px] pb-[21px] bg-[#f6f4f4] rounded-[19px] items-center inline-flex">
+<div className="text-[#2d2c2c] md:pl-[13px] md:text-2xl text-[15px] font-normal font-gilroy_medium">Call/WhatsApp us at +91 9873344942 </div>
 </div>
           </div>
         </main>
