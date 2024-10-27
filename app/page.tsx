@@ -120,7 +120,7 @@ export default function Home() {
           </p>
 
           {/* Villa Images */}
-            <div className="grid grid-cols-1 justify-center md:mb-[40px] items-center sm:grid-cols-2 md:grid-cols-3 gap-8 ml-[40px]">
+            <div className="grid grid-cols-1 justify-center md:mb-[40px] items-center sm:grid-cols-2 md:grid-cols-3 gap-8 md:ml-[54px]">
             <motion.div
               whileHover={{ scale: 1.05 }}
               className=" "
@@ -166,7 +166,8 @@ export default function Home() {
 
     <footer className="bg-[#FBF8F4] md:px-[120px] py-10 border-t border-gray-300">
   <div className="container mx-auto flex  flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
-    <div className="flex  md:text-xl justify-center items-center gap-3">
+    <div className="flex  md:text-xl justify-center items-center gap-1 text-lg   *:
+    ">
       <span className="font-semibold md:text-xl text-black">Follow us on -</span>
       <a  className=" md:text-2xl "href="https://instagram.com" target="_blank" rel="noopener noreferrer">
       <InstagramLogoIcon width={25} height={25}   />
@@ -190,15 +191,15 @@ export default function Home() {
 </footer>
 
 
-<div className="flex border-t  md:px-[90px] md:pb-[20px] md:pt-[20px] bg-[#FBF8F4] justify-between">
+<div className="flex border-t px-[25px]  md:px-[90px] md:pb-[20px] md:pt-[20px] bg-[#FBF8F4] justify-between">
 
 
 <div className="">
 <Image width={160} height={160} src={logofull} alt="logo">
 
 </Image>
-  </div> 
-<div className=" bg-[#FBF8F4] flex    md:pr-[30px] md:text-xl    md:px-[86px] border-gray-300 pt-8  text-[#3F3E3E] text-sm">
+  </div>  
+<div className=" bg-[#FBF8F4]  text-[10px]    md:pr-[30px] md:text-xl    md:px-[86px] border-gray-300 pt-8  text-[#3F3E3E] ">
     Homefinderr©copyright2024 All Rights Reserved.
   </div>
 
