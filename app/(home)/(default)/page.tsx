@@ -69,7 +69,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 1 }}
-            className="text-[#403D3D] font-gilroy md:text-[25px]  text-xl md:font-[28px]  pt-[35px]"
+            className="text-[#403D3D] font-gilroy  md:text-[25px]  text-xl md:font-[28px]  pt-[35px]"
           >
             "Stay tuned for the ultimate property search experience"
           </motion.p>

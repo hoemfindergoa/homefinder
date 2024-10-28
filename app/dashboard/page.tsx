@@ -19,13 +19,13 @@ export default function Blog() {
 				</Link>
 			</div>
 			<div className="flex items-center pt-[100px] justify-between">
-				<h1 className="text-3xl font-bold">Blogs</h1>
+				<h1 className="text-3xl font-bold">Properties Articles</h1>
 				<Link href="/dashboard/blog">
 					<Button
 						className="flex items-center gap-2 "
 						variant="outline"
 					>
-						Blogs <PlusIcon />
+						Articles <PlusIcon />
 					</Button>
 				</Link>
 			</div>
