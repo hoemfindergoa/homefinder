@@ -78,7 +78,7 @@ export default function aboutus() {
   return (
     <section className="parlaxsection md:px-[20px]   newbackground">
       <ParallaxText  baseVelocity={-5}>Home Finder</ParallaxText>
-      <ParallaxText baseVelocity={5}>Comming Soon</ParallaxText>
+      <ParallaxText baseVelocity={5}>Coming Soon</ParallaxText>
     </section>
   );
 }

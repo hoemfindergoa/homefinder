@@ -75,16 +75,16 @@ export default function Home() {
           </motion.p>
 
           {/* Email Input */}
-          <div className="pt-[55px]  md:pl-[18px] ">
+          <div className="pt-[55px]  md:pl-[16px] ">
             <div className="md:w-[800px] w-[350px] mt-[10px] py-1  px-1 mx-auto border border-[#7A7979] rounded-full flex items-center     ">
               <Input
                 type="email"
                 placeholder="Enter your email address"
                 className="w-3/4 placeholder-black md:text-[21px] text-15px font-gilroy  text-black  mx-4 border-none md:my-2 md:py-[18px] py-1"
               />
-              <Button className="bg-[#4C2B21] font-gilroy   ml-[46px]  text-[8px]  md:text-[24px]  text-white py-2 md:py-[25px] rounded-full hover:bg-brown-800">
+              <Button className="bg-[#4C2B21] font-gilroy hover:shadow-xl shadow-gray-700    ml-[46px]  text-[8px]  md:text-[24px]  text-white py-2 md:py-[25px] rounded-full hover:bg-brown-800">
                 
-                <p className="text-[20px]">
+                <p className="font-gilroy text-[20px]">
 
                 Notify Me
 
@@ -94,7 +94,7 @@ export default function Home() {
           </div>
 
           <div className="pt-[55px] md:pl-[6px] cursor-pointer hover:text-[#4C2B21]  mb-[15px]">
-<div className="md:w-[732px]  w-[350px] h-[43px] md:h-[83px] md:pl-[135px] justify-center md:pr-[173px] pt-[26px] pb-[21px] bg-[#f6f4f4] rounded-[19px] items-center inline-flex">
+<div className="md:w-[732px] hover:shadow-lg shadow-gray-700  w-[350px] h-[43px] md:h-[83px] md:pl-[135px] justify-center md:pr-[173px] pt-[26px] pb-[21px] bg-[#f6f4f4] rounded-[19px] items-center inline-flex">
 <div className="text-[#2d2c2c] md:pl-[13px] md:text-2xl text-[15px] font-normal font-gilroy_medium">Call/WhatsApp us at +91 9873344942 </div>
 </div>
           </div>
@@ -107,7 +107,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="text-2xl md:text-5xl font-gilroy_medium mb-[52px]"
+            className="text-2xl md:text-5xl font-gilroy_medium mb-[44px]"
           >
             Luxury Living in the Heart of Goa
           </motion.h2>
@@ -193,11 +193,11 @@ export default function Home() {
 
 
 <div className="">
-<Image width={160} height={160} src={logofull} alt="logo">
+<Image width={180} height={180} src={logofull} alt="logo">
 
 </Image>
   </div>  
-<div className=" bg-[#FBF8F4]  text-[10px]    md:pr-[30px] md:text-xl    md:px-[86px] border-gray-300 pt-8  text-[#3F3E3E] ">
+<div className=" bg-[#FBF8F4]  text-[6px]    md:pr-[36px] md:text-sm    md:px-[86px] border-gray-300 pt-8  text-[#3F3E3E] ">
     Homefinderr©copyright2024 All Rights Reserved.
   </div>
 
