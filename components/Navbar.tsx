@@ -1,20 +1,25 @@
 "use client";
-
-import React, { useState } from 'react';
+import React, { useState, MouseEvent } from 'react';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import image from "../app/assests/Logo-Brown_Instagram.jpg"
+import image from "../app/assests/Logo-Brown_Instagram.jpg";
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  
+  // Define the toggle function with TypeScript annotation for the event type
+  const toggleMenu = (e: MouseEvent<HTMLButtonElement | HTMLDivElement>) => {
+    e.stopPropagation(); // Prevents bubbling issues
+    setIsOpen(!isOpen);
+    console.log('Menu state:', !isOpen); // Logging state to debug
+  };
 
   const pathname = usePathname(); // Get current path
 
   return (
     <div>
-      <nav className="flex items-center justify-between md:p-4 px-4  md:px-8 lg:px-16 w-full">
+      <nav className="flex items-center justify-between md:p-4 px-4 md:px-8 lg:px-16 w-full">
         {/* Logo */}
         <div className="flex items-center">
           <Image
@@ -33,7 +38,7 @@ function Navbar() {
               <Link href="/">Home</Link>
             </div>
           </div>
-          <div className={`text-black text-[26px] font-gilroy font-normal hover:text-gray-600 leading-none ${pathname === '/aboutus' ? 'underline ' : ''}`}>
+          <div className={`text-black text-[26px] font-gilroy font-normal hover:text-gray-600 leading-none ${pathname === '/aboutus' ? 'underline' : ''}`}>
             <Link href="/aboutus">About us</Link>
           </div>
           <div className={`text-black text-[26px] font-gilroy font-normal hover:text-gray-600 leading-none ${pathname === '/villas' ? 'underline' : ''}`}>
@@ -55,7 +60,7 @@ function Navbar() {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="absolute top-[90px] left-0 w-full bg-white flex flex-col items-center py-4 space-y-4 md:hidden text-[#777577] font-['Nunito']">
+          <div className="absolute top-[90px] left-0 w-full bg-white z-10 flex flex-col items-center py-4 space-y-4 md:hidden text-[#777577] font-['Nunito']">
             <div className="text-black text-xl font-gilroy font-normal hover:text-gray-600 leading-none" onClick={toggleMenu}>
               <Link href="/">Home</Link>
             </div>
@@ -79,5 +84,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-// import image from ","
