@@ -77,7 +77,7 @@ export default function Home() {
           </motion.p>
 
           {/* Email Input */}
-          <div className="pt-[55px]  md:pl-[15px] ">
+          <div className="pt-[55px]  md:pl-[18px] ">
             <div className="md:w-[800px] w-[350px] mt-[10px] py-1  px-1 mx-auto border border-[#7A7979] rounded-full flex items-center     ">
               <Input
                 type="email"
