@@ -77,7 +77,7 @@ export default function Home() {
           </motion.p>
 
           {/* Email Input */}
-          <div className="pt-[55px] ">
+          <div className="pt-[55px]  md:pl-[15px] ">
             <div className="md:w-[800px] w-[350px] mt-[10px] py-1  px-1 mx-auto border border-[#7A7979] rounded-full flex items-center     ">
               <Input
                 type="email"
@@ -97,7 +97,7 @@ export default function Home() {
 
           <div className="pt-[55px] md:pl-[6px] mb-[15px]">
 <div className="md:w-[732px]  w-[350px] h-[43px] md:h-[83px] md:pl-[135px] justify-center md:pr-[173px] pt-[26px] pb-[21px] bg-[#f6f4f4] rounded-[19px] items-center inline-flex">
-<div className="text-[#2d2c2c] md:pl-[13px] md:text-2xl text-[15px] font-normal font-gilroy_medium">Call/WhatsApp us at +91 9873344942 </div>
+<div className="text-[#2d2c2c] md:pl-[13px] md:text-2xl text-[15px] hover:text-[#4C2B21] font-normal font-gilroy_medium">Call/WhatsApp us at +91 9873344942 </div>
 </div>
           </div>
         </main>

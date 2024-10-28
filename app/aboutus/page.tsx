@@ -63,7 +63,7 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
    * dynamically generated number of children.
    */
   return (
-    <div className="parallax  newbackground">
+    <div className="parallax md:px-[20px] newbackground">
       <motion.div className="scroller" style={{ x }}>
         <span>{children} </span>
         <span>{children} </span>
@@ -74,9 +74,9 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
   );
 }
 
-export default function App() {
+export default function aboutus() {
   return (
-    <section className="parlaxsection newbackground">
+    <section className="parlaxsection md:px-[20px]  newbackground">
       <ParallaxText baseVelocity={-5}>Home Finder</ParallaxText>
       <ParallaxText baseVelocity={5}>Comming Soon</ParallaxText>
     </section>

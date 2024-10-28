@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import image from "../app/assests/Logo-Brown_Instagram.jpg"
+
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -28,14 +29,14 @@ function Navbar() {
         {/* Desktop Links */}
         <div className="hidden md:flex ml-[600px] space-x-8 items-center text-[#777577] font-['Nunito']">
           <div className="gap-4">
-            <div className={`text-black text-[30px] font-gilroy font-normal hover:text-gray-600 leading-none ${pathname === '/' ? 'underline' : ''}`}>
+            <div className={`text-black text-[26px] font-gilroy font-normal hover:text-gray-600 leading-none ${pathname === '/' ? 'underline' : ''}`}>
               <Link href="/">Home</Link>
             </div>
           </div>
-          <div className={`text-black text-[30px] font-gilroy font-normal hover:text-gray-600 leading-none ${pathname === '/aboutus' ? 'underline ' : ''}`}>
+          <div className={`text-black text-[26px] font-gilroy font-normal hover:text-gray-600 leading-none ${pathname === '/aboutus' ? 'underline ' : ''}`}>
             <Link href="/aboutus">About us</Link>
           </div>
-          <div className={`text-black text-[30px] font-gilroy font-normal hover:text-gray-600 leading-none ${pathname === '/villas' ? 'underline' : ''}`}>
+          <div className={`text-black text-[26px] font-gilroy font-normal hover:text-gray-600 leading-none ${pathname === '/villas' ? 'underline' : ''}`}>
             <Link href="/villas">Villas</Link>
           </div>
         </div>
@@ -43,7 +44,7 @@ function Navbar() {
         {/* Schedule a Call Button (Desktop) */}
         <div className="hidden md:block">
           <div className="w-[270px] pr-[3px] h-[62px] py-[35px] bg-[#4c2b21] rounded-[11px] justify-center items-center inline-flex">
-            <div className="text-white text-3xl font-normal font-gilroy_medium">Schedule a call</div>
+            <div className="text-white text-[25px] font-normal font-gilroy_medium">Schedule a call</div>
           </div>
         </div>
 
