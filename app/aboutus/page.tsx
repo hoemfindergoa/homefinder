@@ -13,7 +13,7 @@ import {
 import { wrap } from "@motionone/utils";
 
 interface ParallaxProps {
-  children: string;
+  children: React.ReactNode; // Accepts JSX elements, strings, etc.
   baseVelocity: number;
 }
 
@@ -77,8 +77,8 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
 export default function aboutus() {
   return (
     <section className="parlaxsection md:px-[20px]   newbackground">
-      <ParallaxText  baseVelocity={-5}>Home Finder</ParallaxText>
-      <ParallaxText baseVelocity={5}>Coming Soon</ParallaxText>
+     <ParallaxText  baseVelocity={-1}><h1 className=" text-gray-800 text-[80px]">Home Finder</h1></ParallaxText>
+     <ParallaxText baseVelocity={1}><h1 className=" pt-[80px] text-[180px]">Coming Soon</h1></ParallaxText>
     </section>
   );
 }

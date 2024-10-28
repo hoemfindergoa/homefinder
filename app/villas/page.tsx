@@ -13,7 +13,7 @@ import {
 import { wrap } from "@motionone/utils";
 
 interface ParallaxProps {
-  children: string;
+  children: React.ReactNode;
   baseVelocity: number;
 }
 
@@ -80,8 +80,8 @@ export default function villas() {
     <div>
       
     <section className="parlaxsection md:px-[20px]   newbackground">
-      <ParallaxText  baseVelocity={-3}>Your dream home is closer than you think</ParallaxText>
-    <ParallaxText baseVelocity={3}>Stay tuned for the unveiling</ParallaxText>
+      <ParallaxText  baseVelocity={-1}><h1 className=" text-gray-800 text-[80px]">Your dream home is closer than you think</h1></ParallaxText>
+    <ParallaxText baseVelocity={1}><h1 className=" pt-[80px] text-[180px]">Stay tuned for the unveiling</h1></ParallaxText>
     </section>
     <section  className="secondsection">
     </section>

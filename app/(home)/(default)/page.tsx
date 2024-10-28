@@ -13,11 +13,27 @@ import { LinkedInLogoIcon } from "@radix-ui/react-icons";
 import {InstagramLogoIcon} from "@radix-ui/react-icons";
 import logofull from "../../assests/Logo_full.png";
 import AnimatedTitle from "@/components/Animatedtext";
+import { useState , ChangeEvent  } from "react";
 
 
 
 export default function Home() {
+
+  const [email, setEmail] = useState<string>('');
+  const [isValid, setIsValid] = useState<boolean>(false);
+
+  // Regular expression for email validation
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const newEmail = e.target.value;
+    setEmail(newEmail);
+    setIsValid(emailRegex.test(newEmail));
+  };
+
+  
   const controls = useAnimation();
+  
 
   // Run the intro fade-in and then animation sequence
   useEffect(() => {
@@ -53,7 +69,7 @@ export default function Home() {
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
+            transition={{ delay: 0.2, duration: 1 }}
             className=" text-2xl md:pt-[2px] pl-[10px]  gilroy_medium md:text-[38px] "
           >
             Your Dream Home Awaits
@@ -68,7 +84,7 @@ export default function Home() {
           <motion.p
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 1 }}
+            transition={{ delay: 0.2, duration: 1 }}
             className="text-[#403D3D] font-gilroy  md:text-[25px]  text-xl md:font-[28px]  pt-[35px]"
           >
             "Stay tuned for the ultimate property search experience"
@@ -78,9 +94,13 @@ export default function Home() {
           <div className="pt-[55px]  md:pl-[16px] ">
             <div className="md:w-[800px] w-[350px] mt-[10px] py-1  px-1 mx-auto border border-[#7A7979] rounded-full flex items-center     ">
               <Input
+      
                 type="email"
                 placeholder="Enter your email address"
-                className="w-3/4 placeholder-black md:text-[21px] text-15px font-gilroy  text-black  mx-4 border-none md:my-2 md:py-[18px] py-1"
+                onChange={handleEmailChange}
+                className={`w-3/4 placeholder-black md:text-[21px] text-15px font-gilroy  text-black  mx-4 border-none md:my-2 md:py-[18px] py-1  ${
+            isValid ? 'text-black' : 'text-red-800'
+          }`}
               />
               <Button className="bg-[#4C2B21] font-gilroy hover:shadow-xl shadow-gray-700    ml-[46px]  text-[8px]  md:text-[24px]  text-white py-2 md:py-[25px] rounded-full hover:bg-brown-800">
                 
@@ -197,7 +217,7 @@ export default function Home() {
 
 </Image>
   </div>  
-<div className=" bg-[#FBF8F4]  text-[6px]    md:pr-[36px] md:text-sm    md:px-[86px] border-gray-300 pt-8  text-[#3F3E3E] ">
+<div className=" bg-[#FBF8F4]  text-[6px]    md:pr-[36px] md:text-sm    md:px-[86px] border-gray-300 pt-10  text-[#3F3E3E] ">
     Homefinderr©copyright2024 All Rights Reserved.
   </div>
 
