@@ -254,6 +254,9 @@ export default function BlogForm({
                 );
               }}
             />
+
+
+            
             <div className=" p-2 gap-2">
               <div className=" contentclass">
               <MyReactQuill

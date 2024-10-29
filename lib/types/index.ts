@@ -28,6 +28,13 @@ export type IBlogDetial = {
 	content:string;
 	author:string;
 };
+
+
+export type IEmaildetail = {
+	created_at: string;
+	id: string;
+	email: string;
+};
 export type IchapterDetails = {
 	catagory_id: number
 	chapter_name: string | null

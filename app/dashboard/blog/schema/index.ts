@@ -37,6 +37,21 @@ export const BlogFormSchema = z
 
 export type BlogFormSchemaType = z.infer<typeof BlogFormSchema>;
 
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+export const EmailFormschema = z
+	.object({
+		email: z.string().min(10, {
+			message: "title is too short",
+		}),
+		created_at:z.string(),
+		
+	})
+	.refine((data) => emailRegex.test(data.email), {
+		message: "Please enter a valid email address.",
+	  })
+
+export type EmailFormschemaType = z.infer<typeof EmailFormschema>;
+
 export const CourseFormSchema = z
 	.object({
 		Catogory_id: z.string().min(20, {

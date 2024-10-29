@@ -3,10 +3,27 @@ import { createSupabaseServerClient } from "@/lib/supabase";
 import { IBlog, IModule } from "@/lib/types";
 import { revalidatePath, unstable_noStore } from "next/cache";
 import { BlogFormSchema, BlogFormSchemaType } from "../../app/dashboard/blog/schema";
-import { contents } from "cheerio/lib/api/traversing";
-import { SiNginx } from "react-icons/si";
 
 const DASHBOARD = "/dashboard/blog";
+
+
+export async function createEmail(data: {
+	email: string;
+	created_at: string;
+
+}) {
+
+	const supabase = await createSupabaseServerClient();
+	const blogResult = await supabase
+		.from("email")
+		.insert(data)
+		.single();
+
+    return blogResult;
+}
+
+
+
 
 export async function createBlog(data: {
 	content: string;
