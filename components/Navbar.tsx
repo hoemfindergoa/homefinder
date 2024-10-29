@@ -55,20 +55,20 @@ function Navbar() {
         </div>
 
         {/* Mobile Menu Button */}
-        <button onClick={toggleMenu} className="md:hidden text-gray-800 text-3xl focus:outline-none">
+        <button onClick={toggleMenu} className="md:hidden   text-gray-800 text-3xl focus:outline-none">
           ☰
         </button>
 
         {/* Mobile Menu */}
         {isOpen && (
           <div className="absolute top-[90px] left-0 w-full bg-white z-10 flex flex-col items-center py-4 space-y-4 md:hidden font-['Nunito']">
-            <div className={`${pathname === '/' ? 'text-black underline' : 'text-gray-700 hover:text-gray-600'} text-xl font-gilroy font-normal leading-none`} onClick={toggleMenu}>
+            <div className={`${pathname === '/' ? 'text-black ' : 'text-gray-700 hover:text-gray-600'} text-xl font-gilroy font-normal leading-none`} onClick={toggleMenu}>
               <Link href="/">Home</Link>
             </div>
-            <div className={`${pathname === '/aboutus' ? 'text-black underline' : 'text-gray-700 hover:text-gray-600'} text-xl font-gilroy font-normal leading-none`} onClick={toggleMenu}>
+            <div className={`${pathname === '/aboutus' ? 'text-black ' : 'text-gray-700 hover:text-gray-600'} text-xl font-gilroy font-normal leading-none`} onClick={toggleMenu}>
               <Link href="/aboutus">About us</Link>
             </div>
-            <div className={`${pathname === '/villas' ? 'text-black underline' : 'text-gray-700 hover:text-gray-600'} text-xl font-gilroy font-normal leading-none`} onClick={toggleMenu}>
+            <div className={`${pathname === '/villas' ? 'text-black ' : 'text-gray-700 hover:text-gray-600'} text-xl font-gilroy font-normal leading-none`} onClick={toggleMenu}>
               <Link href="/villas">Villas</Link>
             </div>
             <div

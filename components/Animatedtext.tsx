@@ -81,7 +81,7 @@ export default function AnimatedTitle() {
                   key={index}
                   variants={characterAnimation}
                 >
-                    <div className="text-[40px] md:text-[130px] font-gilroy_bold text-shadow-lg  text-black">
+                    <div className="text-[60px] md:text-[130px] font-gilroy_bold text-shadow-lg  text-black">
 
                   {character}
                     </div>
