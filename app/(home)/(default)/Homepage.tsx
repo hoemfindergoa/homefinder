@@ -90,7 +90,7 @@ export default function Home(
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 1 }}
-            className=" text-xl pt-[4px] md:pt-[2px] pl-[10px]  gilroy_medium md:text-[38px] "
+            className=" text-[20px] pt-[6px] md:pt-[2px] pl-[10px]  gilroy_medium md:text-[38px] "
           >
             Your Dream Home Awaits
           </motion.h1>
@@ -111,11 +111,6 @@ export default function Home(
           </motion.p>
 
           {/* Email Input */}
-
-
-
-
-
 <Form  {...form}>
 
     <form 
@@ -135,6 +130,7 @@ export default function Home(
                         <Input
                           placeholder="Enter your email address"
                           {...field}
+                          type="email"
                           className=" md:w-[550px] bg-white  placeholder-black md:text-[21px] text-[12px] font-gilroy  text-black  mx-4 border-none md:my-2 md:py-[18px] py-1"
                         />
                       </div>
@@ -157,7 +153,7 @@ export default function Home(
                disabled={!form.formState.isValid}
               className="bg-[#4C2B21] font-gilroy hover:shadow-xl shadow-gray-700    ml-[84px]  text-[8px]  md:text-[24px]  text-white py-2 md:py-[25px] rounded-full hover:bg-brown-800">
                 
-                <p className="font-gilroy text-[12px] md:text-[20px]">
+                <p className="font-gilroy text-[11px] md:text-[20px]">
 
                 Notify Me
 

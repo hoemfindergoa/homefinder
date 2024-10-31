@@ -77,7 +77,10 @@ function Navbar() {
               className="bg-[#4c2b21]  text-white text-xl font-gilroy_medium font-normal rounded-[11px] hover:bg-[#3e2a1d] transition duration-200 py-2 px-4"
               onClick={toggleMenu}
             >
+            <Link href="#calling">
+            
               Schedule a call
+            </Link>
             </div>
           </div>
         )}
