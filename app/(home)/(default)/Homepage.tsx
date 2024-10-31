@@ -136,14 +136,16 @@ export default function Home(
                           placeholder="Enter your email address"
                           {...field}
                           className=" md:w-[550px] bg-white  placeholder-black md:text-[21px] text-[12px] font-gilroy  text-black  mx-4 border-none md:my-2 md:py-[18px] py-1"
-                          type="email"
                         />
                       </div>
                     </FormControl>
 
-                    <div className="px-3">
-                      <FormMessage />
-                    </div>
+                    {form.getFieldState("email").invalid &&
+                    form.getValues().email && (
+                      <div className="text-red-400">
+                        <FormMessage />
+                      </div>
+                    )}
                   </FormItem>
                 );
               }}
@@ -152,7 +154,7 @@ export default function Home(
               <Button
                role="button"
                type="submit"
-            //    disabled={!form.formState.isValid}
+               disabled={!form.formState.isValid}
               className="bg-[#4C2B21] font-gilroy hover:shadow-xl shadow-gray-700    ml-[84px]  text-[8px]  md:text-[24px]  text-white py-2 md:py-[25px] rounded-full hover:bg-brown-800">
                 
                 <p className="font-gilroy text-[12px] md:text-[20px]">
