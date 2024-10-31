@@ -34,7 +34,7 @@ export default function CreateForm() {
 				});
 			} else {
 				toast({
-					title: "Successfully create a post 🎉",
+					title: "Successfully added your email🎉",
 					description: data.email,
 				});
 				router.push("/thankyou");

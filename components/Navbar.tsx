@@ -49,9 +49,11 @@ function Navbar() {
 
         {/* Schedule a Call Button (Desktop) */}
         <div className="hidden md:block">
-          <div className="w-[270px] hover:drop-shadow-xl cursor-pointer hover:shadow-sm pr-[3px] h-[62px] py-[22px] bg-[#4c2b21] rounded-[11px] flex justify-center items-center">
+        <Link href="#calling">
+        <div className="w-[270px] hover:drop-shadow-xl cursor-pointer hover:shadow-sm pr-[3px] h-[62px] py-[22px] bg-[#4c2b21] rounded-[11px] flex justify-center items-center">
             <div className="text-white md:px-[2px]   text-[25px] font-gilroy_medium">Schedule a call</div>
           </div>
+        </Link>
         </div>
 
         {/* Mobile Menu Button */}

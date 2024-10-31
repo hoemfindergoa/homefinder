@@ -3,8 +3,8 @@ import { useEffect } from "react";
 import { motion,  useAnimation } from "framer-motion";
 import Image from "next/image";
 import { Analytics } from "@vercel/analytics/react";
-import image1 from"../../assests/image1.png"
-import image2 from "../../assests/image2.png";
+import image1 from"../../assests/ImageItem.jpg"
+import image2 from "../../assests/ImageItem 2.jpg";
 import image3 from "../..//assests/image3.png";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -177,7 +177,7 @@ export default function Home(
 
     
 
-          <div className="pt-[55px] md:pl-[6px] cursor-pointer hover:text-[#4C2B21]  mb-[15px]">
+          <div id="calling" className=" pt-[55px] md:pl-[6px] cursor-pointer hover:text-[#4C2B21]  mb-[15px]">
 <div className="md:w-[732px] hover:shadow-lg shadow-gray-700  w-[300px] h-[43px] md:h-[83px] md:pl-[135px] justify-center md:pr-[173px] pt-[26px] pb-[21px] bg-[#f6f4f4] rounded-[19px] items-center inline-flex">
 <div className="text-[#2d2c2c] md:pl-[13px] md:text-2xl text-[12px] font-normal font-gilroy_medium">Call/WhatsApp us at +91 9873344942 </div>
 </div>
@@ -250,8 +250,8 @@ export default function Home(
   <div className="container mx-auto flex  flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
     <div className="flex  md:text-xl justify-center items-center gap-1 text-lg   *:
     ">
-      <span className="font-semibold md:text-xl text-black">Follow us on -</span>
-      <a  className=" md:text-2xl "href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+      <span className="font-semibold md:ml-[15px] md:text-xl text-black">Follow us on -</span>
+      <a  className=" md:text-2xl "href="https://www.instagram.com/homefinderr.in?igsh=MXo4eHc4Z200OXJ4&utm_source=qr" target="_blank" rel="noopener noreferrer">
       <InstagramLogoIcon width={25} height={25}   />
       </a>
       <a className=" md:text-2xl " href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
@@ -273,7 +273,7 @@ export default function Home(
 </footer>
 
 
-<div className="flex border-t px-[25px]  md:px-[90px] md:pb-[20px] md:pt-[20px] bg-[#FBF8F4] justify-between">
+<div className="flex border-t px-[25px] md:pl-[105px]  md:px-[90px] md:pb-[20px] md:pt-[20px] bg-[#FBF8F4] justify-between">
 
 
 <div className="">
