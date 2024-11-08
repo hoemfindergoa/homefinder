@@ -12,7 +12,7 @@ const defaultUrl = process.env.VERCEL_URL
 
 export const metadata = {
   metadataBase: new URL(defaultUrl),
-  title: 'Home finder',
+  title: 'Home finderr',
   description: 'The fastest way to find homes in Goa',
 }
 
