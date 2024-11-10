@@ -26,8 +26,8 @@ export default function RootLayout({
       <meta  name="google-adsense-account" content="ca-pub-7557474007097933">
 
       </meta>
-      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-      </meta>
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+            </meta>
       <head>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7557474007097933"
      crossOrigin="anonymous"></script>
