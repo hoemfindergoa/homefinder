@@ -44,14 +44,14 @@
 
     const form = useForm<EmailFormschemaType>({
       mode: "all",
-      resolver: zodResolver(EmailFormschema),
+      // resolver: zodResolver(EmailFormschema),
 
       defaultValues: {
         email: defaultEmail?.email || "",
       },
     });
 
-    const onSubmit = (data: z.infer<typeof EmailFormschema>) => {
+    const onSubmit = (data: EmailFormschemaType) => {
       console.log(data);
       startTransition(() => {
         onHandleSubmit(data);
@@ -175,7 +175,7 @@
                       role="button"
                       type="submit"
                       variant="default"
-                      disabled={!form.formState.isValid}
+                      // disabled={!form.formState.isValid}
                       className="bg-[#4C2B21] disabled:bg-[#4C2B21] disabled:opacity-95 font-gilroy hover:shadow-xl shadow-gray-700 ml-[80px]  md:ml-[34px]  text-[8px]  md:text-[24px]  text-white py-2 md:py-[25px] rounded-full hover:bg-brown-800"
                     >
                       <p className="font-gilroy_medium md:pt-0 pt-[2px] md:pr-0 pl-[1px] text-[11px] md:text-[20px]">

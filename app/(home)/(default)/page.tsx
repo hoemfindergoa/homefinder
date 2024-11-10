@@ -1,7 +1,6 @@
-"use client"
+"use client";
 import React from "react";
 import { toast } from "@/components/ui/use-toast";
-import { defaultBlog } from "@/lib/data";
 import { PostgrestSingleResponse } from "@supabase/supabase-js";
 import Home from "./Homepage";
 import { createEmail } from "@/lib/actions/blog";
@@ -12,19 +11,31 @@ import { defaultEmail } from "@/lib/data";
 export default function CreateForm() {
 	const router = useRouter();
 
+	// Regular expression for validating email format
+	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 	const onHandleSubmit = async (data: EmailFormschemaType) => {
+		// Validate email format before sending data
+		if (!emailRegex.test(data.email)) {
+			toast({
+				title: "Email Validation Failed",
+				description: "Please enter a valid email address.",
+			});
+			return; // Stop submission if email is invalid
+		}
+
 		try {
 			const result = await createEmail(data);	
 			if (!result) {
 				throw new Error("No response received from server.");
 			}
-	
-			const parsedResult = result;
-	
-			const { error } = parsedResult as PostgrestSingleResponse<null>;
+
+			const parsedResult = result as PostgrestSingleResponse<null>;
+			const { error } = parsedResult;
+
 			if (error?.message) {
 				toast({
-					title: "Fail to add  the email 😢",
+					title: "Failed to add the email 😢",
 					description: (
 						<pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
 							<code className="text-white">{error.message}</code>
@@ -33,21 +44,23 @@ export default function CreateForm() {
 				});
 			} else {
 				toast({
-					title: "Successfully added your email🎉",
+					title: "Successfully added your email 🎉",
 					description: data.email,
 				});
 				router.push("/thankyou");
 			}
 		} catch (error) {
 			console.error("Error occurred while handling submit:", error);
-			// Handle error appropriately, such as displaying an error message to the user
+			toast({
+				title: "Submission Error",
+				description: "An error occurred while submitting your email. Please try again.",
+			});
 		}
 	};
-	return (
-		<div className="">
-<Home  onHandleSubmit={onHandleSubmit}
-			defaultEmail={defaultEmail}/>
-			</div>
-	);
 
+	return (
+		<div>
+			<Home onHandleSubmit={onHandleSubmit} defaultEmail={defaultEmail} />
+		</div>
+	);
 }
