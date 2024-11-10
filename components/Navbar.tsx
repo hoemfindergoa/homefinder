@@ -51,7 +51,7 @@ function Navbar() {
         <div className="hidden md:block">
         <Link href="#calling">
         <div className="w-[270px] hover:drop-shadow-xl cursor-pointer hover:shadow-sm pr-[3px] h-[62px] py-[22px] bg-[#4c2b21] rounded-[11px] flex justify-center items-center">
-            <div className="text-white md:px-[2px]   text-[25px] font-gilroy_medium">Schedule a call</div>
+            <div className="text-white md:px-[2px]  pt-[3px]  text-[25px] font-gilroy_medium">Schedule a call</div>
           </div>
         </Link>
         </div>
@@ -77,7 +77,7 @@ function Navbar() {
               className="bg-[#4c2b21]  text-white text-xl font-gilroy_medium font-normal rounded-[11px] hover:bg-[#3e2a1d] transition duration-200 py-2 px-4"
               onClick={toggleMenu}
             >
-            <Link href="#calling">
+            <Link className='' href="#calling">
             
               Schedule a call
             </Link>
