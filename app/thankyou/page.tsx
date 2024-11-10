@@ -33,7 +33,7 @@ const ThankYouPage: React.FC = () => {
           isVisible ? "opacity-100" : "opacity-0"
         } text-center mx-4 p-8 rounded-lg bg-white relative z-10`}
       >
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">Thank You!</h1>
+        <h1 className="text-4xl font-bold text-gray-800 mb-4">Thank You</h1>
         <p className="text-lg text-gray-600">
           We  will Notify when we will ready.
         </p>
