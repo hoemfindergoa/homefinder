@@ -307,7 +307,7 @@
            <a
                 target="blank"
                 href="mailto:homefinderr@gmail.com"
-                  className="md:text-xl ml-[20px]"
+                  className="md:text-xl md:ml-[20px]"
               >
                 Homefinderr@gmail.com
               </a>
