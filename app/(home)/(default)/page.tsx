@@ -19,7 +19,7 @@ export default function CreateForm() {
 	const onHandleSubmit = async (data: EmailFormschemaType) => {
 		// Validate email format before sending data
 		if (!emailRegex.test(data.email)) {
-			toast({
+			toast( {
 				variant: "destructive",
 				title: "Uh oh! email validation failed  😢",
 				description: "Please enter a valid email address.",
