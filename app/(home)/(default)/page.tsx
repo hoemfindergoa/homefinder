@@ -7,6 +7,8 @@ import { createEmail } from "@/lib/actions/blog";
 import { EmailFormschemaType } from "@/app/dashboard/blog/schema";
 import { useRouter } from "next/navigation";
 import { defaultEmail } from "@/lib/data";
+import { ToastAction } from "@/components/ui/toast"
+
 
 export default function CreateForm() {
 	const router = useRouter();
@@ -18,9 +20,13 @@ export default function CreateForm() {
 		// Validate email format before sending data
 		if (!emailRegex.test(data.email)) {
 			toast({
-				title: "Email Validation Failed",
+				variant: "destructive",
+				title: "Uh oh! email validation failed  😢",
 				description: "Please enter a valid email address.",
-			});
+				action: <ToastAction altText="Try again">Try again</ToastAction>,
+			
+			}
+		);
 			return; // Stop submission if email is invalid
 		}
 
