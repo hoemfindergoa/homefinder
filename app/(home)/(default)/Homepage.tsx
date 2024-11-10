@@ -13,6 +13,7 @@ import { InstagramLogoIcon } from "@radix-ui/react-icons";
 import logofull from "../../assests/Logo_full.png";
 import AnimatedTitle from "@/components/Animatedtext";
 import { useState, ChangeEvent } from "react";
+
 import {
   EmailFormschema,
   EmailFormschemaType,
@@ -35,6 +36,8 @@ export default function Home({
   onHandleSubmit: (data: EmailFormschemaType) => void;
 }) {
   const [isPending, startTransition] = useTransition();
+  const [isDesktop, setIsDesktop] = useState(false);
+
 
   // Regular expression for email validation
 
@@ -60,6 +63,22 @@ export default function Home({
   const controls = useAnimation();
 
   // Run the intro fade-in and then animation sequence
+
+  useEffect(() => {
+    // Only run this in the browser
+    if (typeof window !== 'undefined') {
+      // Set initial screen size
+      setIsDesktop(window.innerWidth >= 768);
+
+      // Update isDesktop based on window size
+      const handleResize = () => {
+        setIsDesktop(window.innerWidth >= 768);
+      };
+
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []);
   useEffect(() => {
     const sequence = async () => {
       // Start with low opacity
@@ -169,7 +188,16 @@ export default function Home({
           >
             <div className="md:w-[732px] hover:shadow-lg shadow-gray-700  w-[300px] h-[43px] md:h-[83px] md:pl-[135px] justify-center md:pr-[173px] pt-[26px] pb-[21px] bg-[#f6f4f4] rounded-[19px] items-center inline-flex">
               <div className="text-[#2d2c2c] md:pl-[13px] md:text-2xl text-[14px] font-normal font-gilroy_medium">
-                Call/WhatsApp us at +91 9873344942{" "}
+              {isDesktop ? (
+        <a href="https://wa.me/919873344942" target="_blank" rel="noopener noreferrer">
+          Call/WhatsApp us at +91 9873344942{" "}
+        </a>
+      ) : (
+        <a href="tel:+919873344942">
+          Call/WhatsApp us at +91 9873344942{" "}
+        </a>
+      )}
+                
               </div>
             </div>
           </div>

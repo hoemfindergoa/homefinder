@@ -13,7 +13,6 @@ export default function CreateForm() {
 	const router = useRouter();
 
 	const onHandleSubmit = async (data: EmailFormschemaType) => {
-		console.log("submit button pressed")
 		try {
 			const result = await createEmail(data);	
 			if (!result) {
