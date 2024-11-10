@@ -38,17 +38,18 @@ export const BlogFormSchema = z
 export type BlogFormSchemaType = z.infer<typeof BlogFormSchema>;
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
 export const EmailFormschema = z
-	.object({
-		email: z.string().min(10, {
-			message: "Not a valid email",
-		}),
-		created_at:z.string(),
-		
-	})
-	.refine((data) => emailRegex.test(data.email), {
-		message: "Please enter a valid email address.",
-	  })
+  .object({
+    email: z.string().min(2, {
+		message: "Not a valid email",
+	}) // Ensures the field is not empty
+      .refine((email) => emailRegex.test(email), {
+        message: "Please enter a valid email address.", // Provides validation feedback
+      }),
+    created_at: z.string(), // Add additional validation if needed
+  });
 
 export type EmailFormschemaType = z.infer<typeof EmailFormschema>;
 

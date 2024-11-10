@@ -29,6 +29,17 @@ export default function Blog() {
 					</Button>
 				</Link>
 			</div>
+			<div className="flex items-center pt-[100px] justify-between">
+				<h1 className="text-3xl font-bold">Registered email🎉</h1>
+				<Link href="/dashboard/emails">
+					<Button
+						className="flex items-center gap-2 "
+						variant="outline"
+					>
+						Emails <PlusIcon />
+					</Button>
+				</Link>
+			</div>
 		
 		</div>
 	);

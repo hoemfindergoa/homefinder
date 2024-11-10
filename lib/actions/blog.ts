@@ -152,6 +152,14 @@ export async function readmoreblog() {
 		.order("created_at", { ascending: true });
 }
 
+export async function readallEmails() {
+	const supabase = await createSupabaseServerClient();
+	return supabase
+		.from("email")
+		.select("*")
+		.order("created_at", { ascending: true });
+}
+
 
 export async function readcourse() {
 	const supabase = await createSupabaseServerClient();
