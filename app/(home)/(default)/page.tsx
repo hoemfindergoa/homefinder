@@ -2,7 +2,7 @@
 import React from "react";
 import { toast } from "@/components/ui/use-toast";
 import { PostgrestSingleResponse } from "@supabase/supabase-js";
-import Home from "./Homepage";
+// import Home from "./Homepage";
 import { createEmail } from "@/lib/actions/blog";
 import { EmailFormschemaType } from "@/app/dashboard/blog/schema";
 import { useRouter } from "next/navigation";
@@ -66,7 +66,7 @@ export default function CreateForm() {
 
 	return (
 		<div>
-			<h1 style="color: red; font-size: 36px;">Website is no longer maintained</h1>	
+			<h1 class="text-2xl font-bold text-red-600">Website is no longer maintained</h1>	
 			{/* <Home onHandleSubmit={onHandleSubmit} defaultEmail={defaultEmail} /> */}
 		</div>
 	);
