@@ -44,7 +44,7 @@ export default function RootLayout({
               <Analytics/>
               <SpeedInsights/>
             </main>
-            <Navbar/>
+            {/* <Navbar/> */}
           {children}
           </ThemeProvider>
           <Toaster />
