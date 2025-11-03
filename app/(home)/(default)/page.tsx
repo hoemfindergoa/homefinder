@@ -66,7 +66,8 @@ export default function CreateForm() {
 
 	return (
 		<div>
-			<Home onHandleSubmit={onHandleSubmit} defaultEmail={defaultEmail} />
+			<h1 style="color: red; font-size: 36px;">Website is no longer maintained</h1>	
+			{/* <Home onHandleSubmit={onHandleSubmit} defaultEmail={defaultEmail} /> */}
 		</div>
 	);
 }
