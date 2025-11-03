@@ -66,7 +66,7 @@ export default function CreateForm() {
 
 	return (
 		<div>
-			<h1 class="text-2xl font-bold text-red-600">Website is no longer maintained</h1>	
+			<h1 class="text-2xl font-bold text-red-600">Website is no longer maintained 😢</h1>	
 			{/* <Home onHandleSubmit={onHandleSubmit} defaultEmail={defaultEmail} /> */}
 		</div>
 	);
